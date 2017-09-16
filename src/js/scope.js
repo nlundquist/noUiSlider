@@ -1,4 +1,3 @@
-
 	// Split out the handle positioning logic so the Move event can use it, too
 	function checkHandlePosition ( reference, handleNumber, to, lookBackward, lookForward, getValue ) {
 
@@ -34,11 +33,11 @@
 		if ( options.padding ) {
 
 			if ( handleNumber === 0 ) {
-				to = Math.max(to, options.padding);
+				to = Math.max(to, options.padding[0]);
 			}
 
 			if ( handleNumber === scope_Handles.length - 1 ) {
-				to = Math.min(to, 100 - options.padding);
+				to = Math.min(to, 100 - options.padding[1]);
 			}
 		}
 
