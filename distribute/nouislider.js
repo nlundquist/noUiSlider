@@ -1,4 +1,4 @@
-/*! nouislider - 10.1.0 - 2017-09-15 15:04:28 */
+/*! nouislider - 10.1.0 - 2017-09-18 15:34:44 */
 
 (function (factory) {
 
@@ -2097,7 +2097,7 @@ function closure ( target, options, originalOptions ){
 		return values;
 	}
 
-	// Removes classes from the root and empties it.
+	// Removes classes from the root and remove noUi elements.
 	function destroy ( ) {
 
 		for ( var key in options.cssClasses ) {
@@ -2105,9 +2105,11 @@ function closure ( target, options, originalOptions ){
 			removeClass(scope_Target, options.cssClasses[key]);
 		}
 
-		while (scope_Target.firstChild) {
-			scope_Target.removeChild(scope_Target.firstChild);
-		}
+		scope_Target.children.forEach(function(child) {
+			if (child.matches('[class^="noUi"]')) {
+				scope_Target.removeChild(child);
+			}
+		});
 
 		delete scope_Target.noUiSlider;
 	}
