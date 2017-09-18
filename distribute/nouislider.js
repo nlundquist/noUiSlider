@@ -1,4 +1,4 @@
-/*! nouislider - 10.1.0 - 2017-09-18 15:34:44 */
+/*! nouislider - 10.1.0 - 2017-09-18 16:13:32 */
 
 (function (factory) {
 
@@ -1919,6 +1919,7 @@ function closure ( target, options, originalOptions ){
 		// The padding option keeps the handles a certain distance from the
 		// edges of the slider. Padding must be > 0.
 		if ( options.padding ) {
+
 			if ( handleNumber === 0 ) {
 				to = Math.max(to, options.padding[0]);
 			}
@@ -2105,11 +2106,10 @@ function closure ( target, options, originalOptions ){
 			removeClass(scope_Target, options.cssClasses[key]);
 		}
 
-		scope_Target.children.forEach(function(child) {
-			if (child.matches('[class^="noUi"]')) {
-				scope_Target.removeChild(child);
-			}
-		});
+		scope_Target.removeChild(scope_Base);
+		if (scope_Pips) {
+			scope_Target.removeChild(scope_Pips);
+		}
 
 		delete scope_Target.noUiSlider;
 	}
