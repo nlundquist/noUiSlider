@@ -219,11 +219,10 @@
 			removeClass(scope_Target, options.cssClasses[key]);
 		}
 
-		scope_Target.children.forEach(function(child) {
-			if (child.matches('[class^="noUi"]')) {
-				scope_Target.removeChild(child);
-			}
-		});
+		scope_Target.removeChild(scope_Base);
+		if (scope_Pips) {
+			scope_Target.removeChild(scope_Pips);
+		}
 
 		delete scope_Target.noUiSlider;
 	}
