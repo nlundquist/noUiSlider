@@ -62,7 +62,7 @@
 
 		// Validate input. Values aren't tested, as the public .val method
 		// will always provide a valid location.
-		if ( !Array.isArray( entry ) || !entry.length ) {
+		if ( !Array.isArray( entry )) {
 			throw new Error("noUiSlider (" + VERSION + "): 'start' option is incorrect.");
 		}
 

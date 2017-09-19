@@ -1,4 +1,4 @@
-/*! nouislider - 10.1.0 - 2017-09-18 16:13:32 */
+/*! nouislider - 10.1.0 - 2017-09-19 11:44:21 */
 
 (function (factory) {
 
@@ -523,7 +523,7 @@
 
 		// Validate input. Values aren't tested, as the public .val method
 		// will always provide a valid location.
-		if ( !Array.isArray( entry ) || !entry.length ) {
+		if ( !Array.isArray( entry )) {
 			throw new Error("noUiSlider (" + VERSION + "): 'start' option is incorrect.");
 		}
 
