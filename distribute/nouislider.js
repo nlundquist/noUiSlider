@@ -1,4 +1,4 @@
-/*! nouislider - 10.1.0 - 2017-09-19 11:44:21 */
+/*! nouislider - 10.1.0 - 2017-09-21 14:50:37 */
 
 (function (factory) {
 
@@ -675,8 +675,8 @@
 			throw new Error("noUiSlider (" + VERSION + "): 'padding' option must be a positive number(s).");
 		}
 
-		if ( parsed.padding[0] >= 50 || parsed.padding[1] >= 50 ) {
-			throw new Error("noUiSlider (" + VERSION + "): 'padding' option must be less than half the range.");
+		if ( parsed.padding[0] + parsed.padding[1] >= 100 ) {
+			throw new Error("noUiSlider (" + VERSION + "): 'padding' option must be less than half the range or an array of exactly two numbers whose sum is less than the the range.");
 		}
 	}
 

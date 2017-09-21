@@ -214,8 +214,8 @@
 			throw new Error("noUiSlider (" + VERSION + "): 'padding' option must be a positive number(s).");
 		}
 
-		if ( parsed.padding[0] >= 50 || parsed.padding[1] >= 50 ) {
-			throw new Error("noUiSlider (" + VERSION + "): 'padding' option must be less than half the range.");
+		if ( parsed.padding[0] + parsed.padding[1] >= 100 ) {
+			throw new Error("noUiSlider (" + VERSION + "): 'padding' option must be less than half the range or an array of exactly two numbers whose sum is less than the the range.");
 		}
 	}
 
